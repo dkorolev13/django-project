@@ -4,6 +4,11 @@ ENV PYTHONUNBUFFERED 1
 
 COPY ./requirements.txt requirements.txt
 COPY ./app /app
+COPY ./entrypoint.sh /entrypoint.sh
+
+# install psycopg2
+RUN apt-get update && apt-get install -qq -y \
+  build-essential libpq-dev netcat --no-install-recommends
 
 RUN pip install -r requirements.txt
 
@@ -16,3 +21,5 @@ RUN adduser --disabled-password --gecos '' user
 
 EXPOSE 8000
 USER user
+
+ENTRYPOINT ["sh", "/entrypoint.sh"]
