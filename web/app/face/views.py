@@ -1,5 +1,11 @@
-from django.http import HttpResponse
+import imp
+#from django.http import HttpResponse
+
+from django.shortcuts import render
 
 
 def index(request):
-    return HttpResponse("Hello world!")
+    if request.method == 'POST':
+        print(request.POST.get('image_url', ''))
+    context = {'data': 'this is face app'}
+    return render(request, 'face/index.html', context)

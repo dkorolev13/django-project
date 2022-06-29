@@ -22,4 +22,4 @@ RUN adduser --disabled-password --gecos '' user
 EXPOSE 8000
 USER user
 
-ENTRYPOINT ["sh", "/entrypoint.sh"]
+ENTRYPOINT ["bash", "/entrypoint.sh"]
