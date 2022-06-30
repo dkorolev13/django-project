@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . import models
-
+import cv2
+from imutils import url_to_image
 
 def index(request):
     if request.method == 'POST':
