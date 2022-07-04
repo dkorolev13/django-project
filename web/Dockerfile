@@ -19,12 +19,13 @@ RUN pip install -r requirements.txt
 
 WORKDIR /app
 
+RUN mkdir -p /vol/web/media
+RUN mkdir -p /vol/web/static
 RUN adduser --disabled-password --gecos '' user
+RUN chown -R user:user /vol/
+RUN chmod -R 755 /vol/web
 
-#RUN chown -R user:user /app/static
-#RUN chmod -R 755 /app/static
-
-EXPOSE 8000
+#EXPOSE 8000
 USER user
 
 ENTRYPOINT ["bash", "/entrypoint.sh"]
