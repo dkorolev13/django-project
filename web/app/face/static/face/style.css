@@ -3,6 +3,7 @@
     margin: 0;
 }
 
+
 .wrapper {
     display: grid;
     margin: 20px 40px;
@@ -24,16 +25,18 @@ img {
     grid-gap: 15px;
 }
 
-@media (min-width: 700px) {
-    .galery {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 15px;
-    }
-}
-
 .image-container {
     position: relative;
+}
+
+.btn-delete {
+    position: absolute;
+    right: 1%;
+    top:1%;
+    color: white;
+    background-color: red;
+    padding: 0.3rem;
+
 }
 
 .bounding-box {
@@ -44,3 +47,14 @@ img {
     justify-content: center;
     cursor: pointer;
 }
+
+@media (min-width: 700px) {
+    .galery {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 15px;
+    }
+}
+
+
+
